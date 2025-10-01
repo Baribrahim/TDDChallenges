@@ -4,4 +4,4 @@ class Calculator:
         return a + b
 
     def sub(self, a, b):
-        return 0
+        return a - b
