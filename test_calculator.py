@@ -2,9 +2,12 @@ import pytest
 
 from Calculator import Calculator
 
-def test_add_one_plus_one_gives_two():
+@pytest.fixture
+def calc():
+    return Calculator()
+
+def test_add_one_plus_one_gives_two(calc):
     # Arrange
-    calc = Calculator()
     num1 = 1
     num2 = 1
     expected_answer = 2
@@ -13,9 +16,8 @@ def test_add_one_plus_one_gives_two():
     # Assert
     assert expected_answer == result
 
-def test_add_one_plus_two_gives_three():
+def test_add_one_plus_two_gives_three(calc):
     # Arrange
-    calc = Calculator()
     num1 = 1
     num2 = 2
     expected_answer = 3
@@ -24,9 +26,8 @@ def test_add_one_plus_two_gives_three():
     # Assert
     assert expected_answer == result
 
-def test_sub_two_minus_one_gives_one():
+def test_sub_two_minus_one_gives_one(calc):
     # Arrange
-    calc = Calculator()
     num1 = 2
     num2 = 1
     expected_answer = 1
@@ -35,9 +36,8 @@ def test_sub_two_minus_one_gives_one():
     # Assert
     assert expected_answer == result
 
-def test_sub_four_minus_one_gives_three():
+def test_sub_four_minus_one_gives_three(calc):
     # Arrange
-    calc = Calculator()
     num1 = 4
     num2 = 1
     expected_answer = 3
